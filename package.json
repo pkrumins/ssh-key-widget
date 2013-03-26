@@ -1,0 +1,31 @@
+{
+    "name" : "ssh-key-widget",
+    "version" : "0.0.1",
+    "description" : "ssh key management widget",
+    "main" : "index.js",
+    "dependencies" : {
+        "brfs" : "~0.0.2",
+        "hyperglue" : "~0.1.5"
+    },
+    "browserify" : {
+        "transform": "brfs"
+    },
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/pkrumins/ssh-key-widget.git"
+    },
+    "homepage" : "https://github.com/pkrumins/ssh-key-widget",
+    "keywords" : [
+        "ssh",
+        "key",
+        "keys",
+        "public key",
+        "authentication"
+    ],
+    "author" : {
+        "name" : "Peteris Krumins",
+        "email" : "peteris.krumins@gmail.com",
+        "url" : "http://www.catonmat.net"
+    },
+    "license" : "MIT"
+}
