@@ -34,28 +34,36 @@ function SSHKeyWidget () {
     var keyList = root.querySelector('#sshwidget-list-keys');
 
     newKey.style.display = 'visible';
+    newKey.style.visibility = 'visible';
     keyList.style.display = 'hidden';
+    keyList.style.visibility = 'hidden';
 
     var a_addKey = root.querySelectorAll('#navigation a')[0];
     var a_listKeys = root.querySelectorAll('#navigation a')[1];
 
-    a_addKey.addEventListener('onclick', function (ev) {
+    a_addKey.addEventListener('click', function (ev) {
         newKey.style.display = 'visible';
+        newKey.style.visibility = 'visible';
         keyList.style.display = 'hidden';
+        keyList.style.visibility = 'hidden';
         return false;
     });
 
-    a_listKeys.addEventListener('onclick', function (ev) {
+    a_listKeys.addEventListener('click', function (ev) {
         newKey.style.display = 'hidden';
+        newKey.style.visibility = 'hidden';
         keyList.style.display = 'visible';
+        keyList.style.visibility = 'visible';
         return false;
     });
 
     newKeyForm.addEventListener('submit', function (ev) {
-        alert('moo');
+        var key = newKeyForm.querySelector('textarea').value;
+        self.emit('newKey', key);
+        return false;
     });
 
-    self.on('key', function (key) {
+    self.on('addKeyToList', function (key) {
         var div = document.createElement('div');
         div.appendChild(document.createTextNode(key));
         keyList.apendChild(div);
