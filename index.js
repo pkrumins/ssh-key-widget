@@ -60,6 +60,7 @@ function SSHKeyWidget () {
     newKeyForm.addEventListener('submit', function (ev) {
         var key = newKeyForm.querySelector('textarea').value;
         self.emit('newKey', key);
+        ev.preventDefault();
         return false;
     });
 
