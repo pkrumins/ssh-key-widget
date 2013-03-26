@@ -66,10 +66,10 @@ function SSHKeyWidget () {
     self.on('addKeyToList', function (key) {
         var div = document.createElement('div');
         div.appendChild(document.createTextNode(key));
-        keyList.apendChild(div);
+        keyList.appendChild(div);
     });
 
-    this.appendTo = function (target) {
+    self.appendTo = function (target) {
         if (typeof target === 'string') {
             target = document.querySelector(target);
         }
